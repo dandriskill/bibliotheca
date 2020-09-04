@@ -1,0 +1,56 @@
+.modal {
+  display: block;
+  margin: 1% auto 0;
+  padding-bottom: 20px;
+  width: 95%;
+  background-color: #282c34;
+  border-radius: 10px;
+  color: #ffffff;
+  outline: none;
+}
+
+@media (min-width: 576px) {
+  .modal {
+    width: 350px;
+    margin: 3% auto 0;
+    width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal {
+    width: 50%;
+  }
+}
+
+@media (min-width: 991px) {
+  .modal {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .modal {
+    width: 30%;
+  }
+}
+
+.modal-button {
+  margin: 10px;
+  height: 35px;
+  width: 75px;
+  border: 3px solid #ffffff;
+  border-radius: 5px;
+  outline: none;
+  background-color: Transparent;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: 'Bitter', serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .15s;
+}
+.modal-button:hover {
+  background-color: #ffffff;
+  color: #282c34;
+}

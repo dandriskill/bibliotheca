@@ -1,0 +1,36 @@
+.BooksHeader {
+  margin: 30px 50px 0px 50px;
+  padding-bottom: 10px;
+  display: grid;
+  grid-template-columns: 27% 27% 11% 10% 10% 15%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "title author pages available overdue tools";
+  border-bottom: 1px solid #282c34;
+  font-weight: 500;
+  font-family: 'Crimson Text', serif;
+}
+
+.books-header-title {
+  grid-area: title;
+  justify-self: start;
+}
+.books-header-author {
+  grid-area: author;
+  justify-self: start;
+}
+.books-header-pages {
+  grid-area: pages;
+  justify-self: start;
+}
+.books-header-available {
+  grid-area: available;
+  justify-self: start;
+}
+.books-header-overdue {
+  grid-area: overdue;
+  justify-self: start;
+}
+.books-header-tools {
+  grid-area: tools;
+}

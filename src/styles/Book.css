@@ -1,0 +1,68 @@
+.Book {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-bottom: 1px solid #282c34;
+  padding: 20px 0px;
+  display: grid;
+  grid-template-columns: 27% 27% 11% 10% 10% 15%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "title author pages available overdue tools";
+}
+
+.book-title {
+  grid-area: title;
+  justify-self: start;
+  align-self: center;
+}
+
+.book-author {
+  grid-area: author;
+  justify-self: start;
+  align-self: center;
+}
+
+.book-pages {
+  grid-area: pages;
+  justify-self: start;
+  align-self: center;
+}
+
+.book-available {
+  grid-area: available;
+  justify-self: start;
+  align-self: center;
+}
+
+.book-overdue {
+  grid-area: overdue;
+  justify-self: start;
+  align-self: center;
+}
+
+.book-tools {
+  grid-area: tools;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  justify-content: space-around;
+}
+.edit-button {
+  width: 23px;
+  padding: 0px 10px;
+  cursor: pointer;
+  transition: .2s;
+}
+.edit-button:hover {
+  fill: green;
+}
+.delete-button {
+  width: 23px;
+  padding: 0px 10px;
+  cursor: pointer;
+  transition: .2s;
+}
+.delete-button:hover {
+  fill: #800020;
+}

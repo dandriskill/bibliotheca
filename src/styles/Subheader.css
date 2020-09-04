@@ -1,0 +1,47 @@
+.Subheader {
+  display: grid;
+  grid-template-columns: 33.3333% 33.3333% 33.3333%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "volumes-count search-bar add-button";
+  padding: 0 50px;
+}
+
+.volumes-count {
+  display: inline-block;
+  grid-area: volumes-count;
+  justify-self: start;
+  align-self: center;
+  padding: 0;
+}
+
+.search-bar {
+  display: inline-block;
+  grid-area: search-bar;
+  justify-self: center;
+  align-self: center;
+}
+
+.add-button {
+  display: inline-block;
+  grid-area: add-button;
+  justify-self: end;
+  align-self: center;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 3px solid #282c34;
+  background-color: Transparent;
+  color: #282c34;
+  outline: none;
+  padding: 3px 10px;
+  height: 35px;
+  width: 75px;
+  font-size: 18px;
+  font-family: 'Bitter', serif;
+  font-weight: bold;
+  transition: .2s;
+}
+.add-button:hover {
+  background-color: #282c34;
+  color: #fffdf7;
+}

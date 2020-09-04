@@ -2,7 +2,7 @@ import React from 'react'
 
 function DeleteButton(props) {
   return (
-    <div title="Delete">
+    <div title='Delete'>
       <svg
         viewBox='0 0 512 512'
         fill='#282c34'

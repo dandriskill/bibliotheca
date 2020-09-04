@@ -28,7 +28,7 @@ function Library({
           })}
         </ul>
       ) : (
-        <div className="fallback-text">No volumes available.</div>
+        <div className='fallback-text'>No volumes available.</div>
       )}
     </div>
   );

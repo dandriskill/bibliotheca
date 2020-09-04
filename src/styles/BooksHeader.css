@@ -5,7 +5,7 @@
   grid-template-columns: 27% 27% 11% 10% 10% 15%;
   grid-template-rows: auto;
   grid-template-areas: 
-    "title author pages available overdue tools";
+    'title author pages available overdue tools';
   border-bottom: 1px solid #282c34;
   font-weight: 500;
   font-family: 'Crimson Text', serif;

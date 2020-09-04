@@ -2,7 +2,7 @@ import React from 'react'
 
 function EditButton(props) {
   return (
-    <div title="Edit">
+    <div title='Edit'>
       <svg
         viewBox='0 0 512 512'
         fill='#282c34'

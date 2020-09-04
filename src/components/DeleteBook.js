@@ -9,18 +9,18 @@ function DeleteBook({
   closeModal,
 }) {
   return (
-    <div className="DeleteBook">
+    <div className='DeleteBook'>
       <h3>Are you sure you want to delete {bookTitle} by {bookAuthor}?</h3>
       <button
-        type="button"
-        className="modal-button"
+        type='button'
+        className='modal-button'
         onClick={() => deleteBook(bookId)}
       >
         Yes
       </button>
       <button
-        type="button"
-        className="modal-button"
+        type='button'
+        className='modal-button'
         onClick={() => closeModal()}
       >
         No

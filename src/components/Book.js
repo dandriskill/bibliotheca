@@ -15,12 +15,12 @@ function Book({
 }) {
   return (
     <li className='Book'>
-      <div className="book-title">{ book.title }</div>
-      <div className="book-author">{ book.author }</div>
-      <div className="book-pages">{ book.pages }</div>
-      <div className="book-available">{ book.available }</div>
-      <div className="book-overdue">{ book.overdue }</div>
-      <div className="book-tools">
+      <div className='book-title'>{ book.title }</div>
+      <div className='book-author'>{ book.author }</div>
+      <div className='book-pages'>{ book.pages }</div>
+      <div className='book-available'>{ book.available }</div>
+      <div className='book-overdue'>{ book.overdue }</div>
+      <div className='book-tools'>
         <div>
           <EditButton onClick={() => openModal(
             <EditBook

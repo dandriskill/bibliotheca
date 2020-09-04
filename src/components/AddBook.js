@@ -6,7 +6,7 @@ function AddBook({
   closeModal,
 }) {
   return (
-    <div className="AddBook">Add Book</div>
+    <div className='AddBook'>Add Book</div>
   );
 }
 

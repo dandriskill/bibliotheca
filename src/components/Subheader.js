@@ -11,12 +11,12 @@ function Subheader({
   saveBook,
 }) {
   return (
-    <div className="Subheader">
-      <h2 className="volumes-count">Volumes: {books ? books.length : 0}</h2>
-      <span className="search-bar"><SearchBar /></span>
+    <div className='Subheader'>
+      <h2 className='volumes-count'>Volumes: {books ? books.length : 0}</h2>
+      <span className='search-bar'><SearchBar /></span>
       <button
-        className="add-button"
-        type="button"
+        className='add-button'
+        type='button'
         onClick={() => openModal(
           <AddBook saveBook={saveBook} closeModal={closeModal} />
         )}

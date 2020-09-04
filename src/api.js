@@ -4,6 +4,7 @@ export function getBooks() {
 
 export function saveBook(book) {
   console.log('saveBook()');
+  console.log(book);
 }
 
 export function updateBook(book) {

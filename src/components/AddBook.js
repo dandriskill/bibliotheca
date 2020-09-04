@@ -64,7 +64,7 @@ function AddBook({
             errors.pages = 'No URLs';
           }
           if (!values.pages) {
-            errors.pages = 'Needs a page number';
+            errors.pages = 'Needs number of pages';
           }
           return errors;
         }}

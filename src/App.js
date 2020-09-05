@@ -17,7 +17,7 @@ import { testBooks } from './test-data';
 
 // TODO:
 // Write tests
-// Create forms and form validation for adding and editing
+// Style book update/save forms
 // Connect to Firebase and write Firebase API calls
 
 // MAYBE:
@@ -44,7 +44,7 @@ function App() {
     handleCloseModal();
     handleOpenModal(
       <Success
-        message={'Your book has been added!'}
+        message={'This volume has been added!'}
         closeModal={handleCloseModal}
       />
     );
@@ -55,7 +55,7 @@ function App() {
     handleCloseModal();
     handleOpenModal(
       <Success
-        message={'Your book has been updated!'}
+        message={'This volume has been updated!'}
         closeModal={handleCloseModal}
       />
     );
@@ -64,6 +64,12 @@ function App() {
   function handleDeleteBook(id) {
     deleteBook(id);
     handleCloseModal();
+    handleOpenModal(
+      <Success
+        message={'This volume has been deleted.'}
+        closeModal={handleCloseModal}
+      />
+    );
   }
 
   function handleOpenModal(content) {

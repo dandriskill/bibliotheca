@@ -79,7 +79,7 @@ function App() {
     } else {
       setBooks(booksFallback.filter((book) => {
         return (
-          book.title.toLowerCase().includes(term) || book.title.toLowerCase().includes(term)
+          book.title.toLowerCase().includes(term) || book.author.toLowerCase().includes(term)
         );
       }));
     }

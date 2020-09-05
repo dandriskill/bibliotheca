@@ -6,6 +6,7 @@ import Subheader from './components/Subheader';
 import BooksHeader from './components/BooksHeader';
 import Library from './components/Library';
 import StandardModal from './components/StandardModal';
+import Success from './components/Success';
 import {
   getBooks,
   saveBook,
@@ -41,11 +42,23 @@ function App() {
   function handleSaveBook(book) {
     saveBook(book);
     handleCloseModal();
+    handleOpenModal(
+      <Success
+        message={'Your book has been added!'}
+        closeModal={handleCloseModal}
+      />
+    );
   }
 
   function handleUpdateBook(book) {
     updateBook(book);
     handleCloseModal();
+    handleOpenModal(
+      <Success
+        message={'Your book has been updated!'}
+        closeModal={handleCloseModal}
+      />
+    );
   }
 
   function handleDeleteBook(id) {

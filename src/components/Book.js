@@ -3,7 +3,7 @@ import '../styles/Book.css';
 
 import EditButton from './EditButton';
 import DeleteButton from './DeleteButton';
-import EditBook from './EditBook';
+import AddEditBook from './AddEditBook';
 import DeleteBook from './DeleteBook';
 
 function Book({
@@ -23,9 +23,13 @@ function Book({
       <div className='book-tools'>
         <div>
           <EditButton onClick={() => openModal(
-            <EditBook
+            <AddEditBook
               bookId={book.id}
+              bookTitle={book.title}
+              bookAuthor={book.author}
+              bookPages={book.pages}
               updateBook={updateBook}
+              openModal={openModal}
               closeModal={closeModal}
             />
           )}/>
@@ -37,6 +41,7 @@ function Book({
               bookTitle={book.title}
               bookAuthor={book.author}
               deleteBook={deleteBook}
+              openModal={openModal}
               closeModal={closeModal}
             />
           )}/>

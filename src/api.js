@@ -9,6 +9,7 @@ export function saveBook(book) {
 
 export function updateBook(book) {
   console.log('updateBook()');
+  console.log(book);
 }
 
 export function deleteBook(id) {

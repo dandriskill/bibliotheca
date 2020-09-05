@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { checkForUrls, upperFirst } from '../utils/strings';
+import Success from './Success';
 import '../styles/AddBook.css';
 
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -36,15 +37,21 @@ const formatInput = ({
 });
 
 function AddBook({
+  bookId,
+  bookTitle,
+  bookAuthor,
+  bookPages,
+  updateBook,
   saveBook,
+  openModal,
   closeModal,
 }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const initialValues = {
-    title: '',
-    author: '',
-    pages: '',
+    title: bookTitle ? bookTitle : '',
+    author: bookAuthor ? bookAuthor : '',
+    pages: bookPages ? bookPages : '',
   };
 
   return (
@@ -70,9 +77,15 @@ function AddBook({
         }}
         onSubmit={(values) => {
           setIsSubmitting(true);
-          saveBook(formatInput(values));
-          alert('Your book has been added!'); // TODO: Have this show up as an "error" message on the modal instead?
-          closeModal();
+          if (bookTitle || bookAuthor || bookPages) {
+            const updateValues = {
+              ...formatInput(values),
+              bookId,
+            };
+            updateBook(updateValues);
+          } else {
+            saveBook(formatInput(values));
+          }
         }}
       >
         <Form autoComplete="off">
@@ -106,7 +119,7 @@ function AddBook({
             </div>
           </div>
           <button type="submit" disabled={isSubmitting} className="button btn-ghost btn-ghost-bold">
-            Submit
+            Save
           </button>
         </Form>
       </Formik>

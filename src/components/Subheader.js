@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/Subheader.css';
 
 import SearchBar from './SearchBar';
-import AddBook from './AddBook';
+import AddEditBook from './AddEditBook';
 
 function Subheader({
   books,
@@ -18,7 +18,7 @@ function Subheader({
         className='add-button'
         type='button'
         onClick={() => openModal(
-          <AddBook saveBook={saveBook} closeModal={closeModal} />
+          <AddEditBook saveBook={saveBook} closeModal={closeModal} />
         )}
       >
         Add +

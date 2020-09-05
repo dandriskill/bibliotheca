@@ -72,6 +72,19 @@ function App() {
     );
   }
 
+  function handleSearchBook(e) {
+    const term = e.target.value.toLowerCase();
+    if (term === '') {
+      setBooks(booksFallback);
+    } else {
+      setBooks(booksFallback.filter((book) => {
+        return (
+          book.title.toLowerCase().includes(term) || book.title.toLowerCase().includes(term)
+        );
+      }));
+    }
+  }
+
   function handleOpenModal(content) {
     setModalContent(content);
     setModalIsOpen(true);
@@ -93,9 +106,10 @@ function App() {
         <h1 className='faded-text'>Ω</h1>
         <Subheader
           books={books}
+          saveBook={handleSaveBook}
+          searchBook={handleSearchBook}
           openModal={handleOpenModal}
           closeModal={handleCloseModal}
-          saveBook={handleSaveBook}
         />
         <BooksHeader />
         <Library

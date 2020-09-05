@@ -1,0 +1,8 @@
+.SearchBar:hover {
+  border: 1px solid #282c34;
+}
+
+.searchbar-inner {
+  width: 500px;
+  font-size: 20px;
+}

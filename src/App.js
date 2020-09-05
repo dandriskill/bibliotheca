@@ -17,13 +17,11 @@ import { testBooks } from './test-data';
 
 // TODO:
 // Write tests
-// Style book update/save forms
+// Format search bar
 // Connect to Firebase and write Firebase API calls
 
 // MAYBE:
-// Format search bar
 // Move props and handlers through Redux?
-// Add search bar functionality, which updates the books array by comparing string input to author or title
 function App() {
   const [books, setBooks] = useState([]);
   const [booksFallback, setBooksFallback] = useState([]); // Note: Maintains book list after search bar is cleared

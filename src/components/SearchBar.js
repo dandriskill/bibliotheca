@@ -9,6 +9,7 @@ function SearchBar({
       <input
         type='text'
         placeholder='Search by author or title'
+        className="searchbar-inner"
         onChange={searchBook}
       />
     </div>

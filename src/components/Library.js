@@ -12,7 +12,7 @@ function Library({
 }) {
   return (
     <div className='Library'>
-      {books ? (
+      {books && books.length ? (
         <ul className='books'>
           {books.map((book) => {
             return (

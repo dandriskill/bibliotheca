@@ -12,12 +12,10 @@ import {
   saveBook,
   updateBook,
   deleteBook,
-} from './api';
-import { testBooks } from './test-data';
+} from './firebase/helpers/db';
 
 // TODO:
 // Write tests
-// Connect to Firebase and write Firebase API calls
 
 // MAYBE:
 // Move props and handlers through Redux?
@@ -31,42 +29,54 @@ function App() {
     handleGetBooks();
   }, []);
 
-  function handleGetBooks() {
-    setBooks(testBooks);
-    setBooksFallback(testBooks);
+  async function handleGetBooks() {
+    const bookList = await getBooks();
+    if (bookList) {
+      setBooks(bookList);
+      setBooksFallback(bookList);
+    }
   }
 
-  function handleSaveBook(book) {
-    saveBook(book);
-    handleCloseModal();
-    handleOpenModal(
-      <Success
-        message={'This volume has been added!'}
-        closeModal={handleCloseModal}
-      />
-    );
+  async function handleSaveBook(book) {
+    const docId = await saveBook(book);
+    if (docId) {
+      handleGetBooks();
+      handleCloseModal();
+      handleOpenModal(
+        <Success
+          message={'This volume has been added!'}
+          closeModal={handleCloseModal}
+        />
+      );
+    }
   }
 
-  function handleUpdateBook(book) {
-    updateBook(book);
-    handleCloseModal();
-    handleOpenModal(
-      <Success
-        message={'This volume has been updated!'}
-        closeModal={handleCloseModal}
-      />
-    );
+  async function handleUpdateBook(book) {
+    const success = await updateBook(book);
+    if (success) {
+      handleGetBooks();
+      handleCloseModal();
+      handleOpenModal(
+        <Success
+          message={'This volume has been updated!'}
+          closeModal={handleCloseModal}
+        />
+      );
+    }
   }
 
-  function handleDeleteBook(id) {
-    deleteBook(id);
-    handleCloseModal();
-    handleOpenModal(
-      <Success
-        message={'This volume has been deleted.'}
-        closeModal={handleCloseModal}
-      />
-    );
+  async function handleDeleteBook(id) {
+    const success = await deleteBook(id);
+    if (success) {
+      handleGetBooks();
+      handleCloseModal();
+      handleOpenModal(
+        <Success
+          message={'This volume has been deleted.'}
+          closeModal={handleCloseModal}
+        />
+      );
+    }
   }
 
   function handleSearchBook(e) {

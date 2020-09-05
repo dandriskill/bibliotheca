@@ -35,7 +35,7 @@ const formatInput = ({
   pages: pages ? parseInt(pages) : '',
 });
 
-function AddBook({
+function AddEditBook({
   bookId,
   bookTitle,
   bookAuthor,
@@ -52,7 +52,7 @@ function AddBook({
   };
 
   return (
-    <div className='AddBook'>
+    <div className='AddEditBook'>
       <Formik
         initialValues={initialValues}
         validationSchema={bookSchema}
@@ -77,7 +77,7 @@ function AddBook({
           if (bookTitle || bookAuthor || bookPages) {
             const updateValues = {
               ...formatInput(values),
-              bookId,
+              id: bookId,
             };
             updateBook(updateValues);
           } else {
@@ -124,4 +124,4 @@ function AddBook({
   );
 }
 
-export default AddBook;
+export default AddEditBook;

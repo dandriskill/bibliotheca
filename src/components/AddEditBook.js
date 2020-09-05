@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { checkForUrls, upperFirst } from '../utils/strings';
-import Success from './Success';
-import '../styles/AddBook.css';
+import '../styles/AddEditBook.css';
 
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -43,8 +42,6 @@ function AddBook({
   bookPages,
   updateBook,
   saveBook,
-  openModal,
-  closeModal,
 }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -118,7 +115,7 @@ function AddBook({
               <ErrorMessage name="pages" component="div" className="error-message" />
             </div>
           </div>
-          <button type="submit" disabled={isSubmitting} className="button btn-ghost btn-ghost-bold">
+          <button type="submit" disabled={isSubmitting} className="modal-button">
             Save
           </button>
         </Form>

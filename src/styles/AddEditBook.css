@@ -1,0 +1,78 @@
+.AddBook {
+  padding: 30px 30px 10px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-align: center;
+}
+
+/* For all forms */
+
+input {
+  width: 190px;
+  height: 35px;
+  padding: 5px;
+  font-size: 16px;
+  font-family: 'Aleo', serif;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 1px #eeeeee;
+  border: none;
+  outline: none;
+}
+
+select {
+  width: 190px;
+  height: 35px;
+  padding: 5px;
+  font-size: 16px;
+  font-family: 'Aleo', serif;
+  box-shadow: 0px 0px 1px #eeeeee;
+  border: none;
+  outline: none;
+  background: #ffffff;
+}
+
+textarea {
+  height: 75px;
+  padding: 5px;
+  font-size: 16px;
+  font-family: 'Aleo', serif;
+  box-shadow: 0px 0px 1px #eeeeee;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.form-fields {
+  text-align: right;
+}
+
+.form-field {
+  margin-bottom: 30px;
+}
+.form-field-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.form-field-label {
+  color: #969696;
+}
+
+.form-field input {
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+.form-field select {
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+.form-field textarea {
+  width: 185px;
+  margin-left: 20px;
+  border-radius: 5px;
+}

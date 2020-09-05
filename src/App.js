@@ -17,14 +17,13 @@ import { testBooks } from './test-data';
 
 // TODO:
 // Write tests
-// Format search bar
 // Connect to Firebase and write Firebase API calls
 
 // MAYBE:
 // Move props and handlers through Redux?
 function App() {
   const [books, setBooks] = useState([]);
-  const [booksFallback, setBooksFallback] = useState([]); // Note: Maintains book list after search bar is cleared
+  const [booksFallback, setBooksFallback] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
 

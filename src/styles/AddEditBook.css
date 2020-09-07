@@ -51,6 +51,7 @@ textarea {
 .form-field {
   margin-bottom: 30px;
 }
+
 .form-field-inner {
   display: flex;
   align-items: center;
@@ -75,4 +76,23 @@ textarea {
   width: 185px;
   margin-left: 20px;
   border-radius: 5px;
+}
+
+.checkbox-field {
+  margin-bottom: 20px;
+}
+
+.checkbox-field-label {
+  color: #969696;
+  margin-right: 15px;
+}
+
+input.checkbox {
+  width: 20px;
+  cursor: pointer;
+}
+
+.checkbox {
+  box-shadow: none;
+  height: 20px;
 }

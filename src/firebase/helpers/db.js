@@ -23,9 +23,16 @@ export const saveBook = async (book) => {
   }
 };
 
-export const updateBook = async ({ id, title, author, pages }) => {
+export const updateBook = async ({
+  id,
+  title,
+  author,
+  pages,
+  available,
+  overdue
+}) => {
   const docId = id;
-  const doc = { title, author, pages };
+  const doc = { title, author, pages, available, overdue };
   try {
     await db.collection('books').doc(docId).update(doc);
     return true;

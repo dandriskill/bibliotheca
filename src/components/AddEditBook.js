@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { checkForUrls, upperFirst } from '../utils/strings';
-import '../styles/AddEditBook.css';
-
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { replace } from 'lodash';
+
+import { checkForUrls, upperFirst } from '../utils/strings';
+import '../styles/AddEditBook.css';
 
 const bookSchema = Yup.object().shape({
   title: Yup
@@ -22,17 +22,28 @@ const bookSchema = Yup.object().shape({
     .number()
     .positive('Must be a positive number')
     .integer('Must be a whole number')
-    .typeError('Must be a number'),
+    .typeError('Must be a number')
+    .required('Required'),
+  available: Yup
+    .boolean()
+    .required(),
+  overdue: Yup
+    .boolean()
+    .required(),
 });
 
 const formatInput = ({
   title,
   author,
   pages,
+  available,
+  overdue,
 }) => ({
   title: replace(upperFirst(title).trim(), /"/g, "'"),
   author: replace(upperFirst(author).trim(), /"/g, "'"),
   pages: pages ? parseInt(pages) : '',
+  available: available || false,
+  overdue: overdue || false,
 });
 
 function AddEditBook({
@@ -40,6 +51,8 @@ function AddEditBook({
   bookTitle,
   bookAuthor,
   bookPages,
+  bookAvailable,
+  bookOverdue,
   updateBook,
   saveBook,
 }) {
@@ -49,6 +62,8 @@ function AddEditBook({
     title: bookTitle ? bookTitle : '',
     author: bookAuthor ? bookAuthor : '',
     pages: bookPages ? bookPages : '',
+    available: bookAvailable || false,
+    overdue: bookOverdue || false,
   };
 
   return (
@@ -85,37 +100,55 @@ function AddEditBook({
           }
         }}
       >
-        <Form autoComplete="off">
-          <div className="form-fields">
-            <div className="form-field">
-              <div className="form-field-inner">
-                <span className="form-field-label">
+        <Form autoComplete='off'>
+          <div className='form-fields'>
+            <div className='form-field'>
+              <div className='form-field-inner'>
+                <span className='form-field-label'>
                   Book Title
                 </span>
-                <Field type="text" name="title" />
+                <Field type='text' name='title' />
               </div>
-              <ErrorMessage name="title" component="div" className="error-message" />
+              <ErrorMessage name='title' component='div' className='error-message' />
             </div>
-            <div className="form-field">
-              <div className="form-field-inner">
-                <span className="form-field-label">
+            <div className='form-field'>
+              <div className='form-field-inner'>
+                <span className='form-field-label'>
                   Author
                 </span>
-                <Field type="text" name="author" />
+                <Field type='text' name='author' />
               </div>
-              <ErrorMessage name="author" component="div" className="error-message" />
+              <ErrorMessage name='author' component='div' className='error-message' />
             </div>
-            <div className="form-field">
-              <div className="form-field-inner">
-                <span className="form-field-label">
+            <div className='form-field'>
+              <div className='form-field-inner'>
+                <span className='form-field-label'>
                   Pages
                 </span>
-                <Field type="text" name="pages" />
+                <Field type='text' name='pages' />
               </div>
-              <ErrorMessage name="pages" component="div" className="error-message" />
+              <ErrorMessage name='pages' component='div' className='error-message' />
+            </div>
+            <div className="checkbox-field">
+              <div className='form-field-inner'>
+                <span className='checkbox-field-label'>
+                  Available
+                </span>
+                <Field type="checkbox" name="available" className="checkbox" />
+              </div>
+              <ErrorMessage name='available' component='div' className='error-message' />
+            </div>
+            <div className="checkbox-field">
+              <div className='form-field-inner'>
+                <span className='checkbox-field-label'>
+                  Overdue
+                </span>
+                <Field type="checkbox" name="overdue" className="checkbox" />
+              </div>
+              <ErrorMessage name='overdue' component='div' className='error-message' />
             </div>
           </div>
-          <button type="submit" disabled={isSubmitting} className="modal-button">
+          <button type='submit' disabled={isSubmitting} className='modal-button'>
             Save
           </button>
         </Form>

@@ -7,6 +7,7 @@ import BooksHeader from './components/BooksHeader';
 import Library from './components/Library';
 import StandardModal from './components/StandardModal';
 import Success from './components/Success';
+import { filterBooks } from './utils';
 import {
   getBooks,
   saveBook,
@@ -14,11 +15,6 @@ import {
   deleteBook,
 } from './firebase/helpers/db';
 
-// TODO:
-// Write tests
-
-// MAYBE:
-// Move props and handlers through Redux?
 function App() {
   const [books, setBooks] = useState([]);
   const [booksFallback, setBooksFallback] = useState([]);
@@ -84,11 +80,7 @@ function App() {
     if (term === '') {
       setBooks(booksFallback);
     } else {
-      setBooks(booksFallback.filter((book) => {
-        return (
-          book.title.toLowerCase().includes(term) || book.author.toLowerCase().includes(term)
-        );
-      }));
+      setBooks(filterBooks(term, booksFallback));
     }
   }
 

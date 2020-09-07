@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { replace } from 'lodash';
 
-import { checkForUrls, upperFirst } from '../utils/strings';
+import { checkForUrls, upperFirst } from '../utils';
 import '../styles/AddEditBook.css';
 
 const bookSchema = Yup.object().shape({

@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Modal from 'react-modal';
 
 import '../styles/StandardModal.css';
-
-Modal.setAppElement('#root');
 
 function StandardModal({
   content,
   modalIsOpen,
   closeModal,
 }) {
+  useEffect(() => {
+    Modal.setAppElement('body');
+  }, []);
+
   return (
     <Modal
       isOpen={modalIsOpen}
